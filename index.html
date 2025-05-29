@@ -2,36 +2,59 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
     <title>Prophetic Warrior</title>
-    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-    <header class="hero">
-        <img src="logo_retouch.jpg" alt="Logo" class="logo" />
-        <h1>Folge Jesus. Diene in Liebe. Befreie in seinem Namen.</h1>
+    <header>
+        <h1>Prophetic Warrior</h1>
+        <nav>
+            <ul>
+                <li><a href="#start">Startseite</a></li>
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#teams">Teams/Kontakt</a></li>
+                <li><a href="#termine">Termine</a></li>
+                <li><a href="#zeugnisse">Glaubenszeugnisse</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#dokumente">Lerndokumente</a></li>
+                <li><a href="#impressum">Impressum</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Startseite</a></li>
-            <li><a href="#">Über mich</a></li>
-            <li><a href="#">Teams & Kontakt</a></li>
-            <li><a href="#">Termine</a></li>
-            <li><a href="#">Glaubenszeugnisse</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Lerndokumente</a></li>
-            <li><a href="#">Impressum</a></li>
-        </ul>
-    </nav>
+
     <main>
-        <section>
-            <h2>Willkommen bei Prophetic Warrior</h2>
-            <p>Unsere Mission ist es, dem Herrn Jesus Christus nachzufolgen, seine Liebe weiterzugeben und Befreiung in seinem Namen zu bringen.</p>
+        <section id="start"><h2>Willkommen</h2><p>Jesus dient. Wir folgen nach.</p></section>
+        <section id="about"><h2>Über mich</h2><p>Hier kannst du dich vorstellen.</p></section>
+        <section id="teams"><h2>Teams & Kontakt</h2><div id="team-list"></div></section>
+        <section id="termine"><h2>Terminbuchung</h2><div id="booking"></div></section>
+        <section id="zeugnisse"><h2>Glaubenszeugnisse</h2></section>
+        <section id="news"><h2>News</h2></section>
+        <section id="dokumente"><h2>Lerndokumente</h2></section>
+        <section id="impressum"><h2>Impressum</h2></section>
+
+        <section id="auth">
+            <h2>Team-Login</h2>
+            <input type="email" id="email" placeholder="E-Mail">
+            <input type="password" id="password" placeholder="Passwort">
+            <button onclick="login()">Login</button>
+            <button onclick="register()">Registrieren</button>
+        </section>
+
+        <section id="dashboard" style="display:none;">
+            <h2>Team-Dashboard</h2>
+            <p>Hier kannst du Termine eintragen.</p>
+            <input type="datetime-local" id="termin">
+            <button onclick="addTermin()">Termin speichern</button>
+            <div id="termine-liste"></div>
+            <button onclick="logout()">Logout</button>
         </section>
     </main>
-    <footer>
-        <p>© 2025 Prophetic Warrior – Alle Rechte vorbehalten.</p>
-    </footer>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
