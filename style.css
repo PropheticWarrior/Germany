@@ -1,34 +1,52 @@
 
 body {
-    font-family: 'Chalkduster', fantasy;
-    background: linear-gradient(to bottom, #ffcc00, #ff3300);
-    color: #000;
     margin: 0;
-    padding: 0;
+    font-family: 'Chalkduster', sans-serif;
+    background: #fff3e0;
+    color: #222;
 }
-header {
-    background-color: rgba(255, 100, 0, 0.9);
-    color: white;
-    padding: 1em;
+
+header.hero {
     text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffeb3b, #ff9800, #f44336);
+    color: white;
 }
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
 nav ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1em;
+    background: #ffcc80;
+    padding: 1rem;
     list-style: none;
-    padding: 0;
+    margin: 0;
 }
-nav a {
-    color: white;
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #000;
     text-decoration: none;
     font-weight: bold;
 }
-section {
-    padding: 2em;
+
+main {
+    padding: 2rem;
+    text-align: center;
 }
-input, button {
-    display: block;
-    margin: 0.5em 0;
-    padding: 0.5em;
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #ffe0b2;
+    margin-top: 2rem;
 }
